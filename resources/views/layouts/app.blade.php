@@ -24,7 +24,7 @@
     <link href="{{ url('assets/css/dark-theme.css') }}" rel="stylesheet" />
     <link href="{{ url('assets/css/semi-dark.css') }}" rel="stylesheet" />
     <link href="{{ url('assets/css/header-colors.css') }}" rel="stylesheet" />
-    <title>Syndron - Bootstrap5 Admin Template</title>
+    <title>{{ env('APP_NAME') }}</title>
 </head>
 
 <body>
@@ -48,6 +48,7 @@
 		{{-- <footer class="page-footer">
 			<p class="mb-0">Copyright © 2021. All right reserved.</p>
 		</footer> --}}
+        @include('sweetalert::alert')
 	</div>
 	<!--end wrapper-->
 	<!-- Bootstrap JS -->
