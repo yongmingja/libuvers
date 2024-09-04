@@ -1,7 +1,13 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () { return view('welcome'); });
-Route::get('/list', function () { return view('layouts.list'); });
-Route::get('/form', function () { return view('layouts.form'); });
+Auth::routes([
+    'register' => false, // Disable registration routes
+    'reset' => false,    // Disable password reset routes
+    'verify' => false,   // Disable email verification routes
+    'confirm' => false,  // Disable password confirmation routes
+]);
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

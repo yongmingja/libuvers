@@ -9,16 +9,7 @@
     <div class="page-content">
         <!--breadcrumb-->
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-            <div class="breadcrumb-title pe-3">All Chart of Accounts</div>
-            <div class="ps-3">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb mb-0 p-0">
-                        <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">Chart of Accounts</li>
-                    </ol>
-                </nav>
-            </div>
+            @yield('breadcrumb')
         </div>
         <!--end breadcrumb-->
         </hr>
@@ -28,7 +19,7 @@
                     <div class="card-body">
                         <div class="row align-items-center">
                             <div class="col-12">
-                                <a href="" class="btn btn-primary mb-3 mb-lg-0"><i class='bx bxs-plus-square'></i>New</a>
+                                @yield('header-button')
                             </div>
                         </div>
                     </div>
@@ -40,20 +31,10 @@
                 <div class="table-responsive">
                     <table class="datatables table table-striped table-bordered border-top-1" style="width:100%">
                         <thead>
-                            <tr>
-                                <th class="text-center align-middle"><input class="form-check-input" type="checkbox" value=""></th>
-                                <th>Code</th>
-                                <th>Name</th>
-                                <th>Type</th>
-                            </tr>
+                            @yield('thead')
                         </thead>
                         <tbody>
-                            <tr data-action="">
-                                <td class="text-center"><input class="form-check-input" type="checkbox" value=""></td>
-                                <td>code</td>
-                                <td>name</td>
-                                <td>type</td>
-                            </tr>
+                            @yield('tbody')
                         </tbody>
                     </table>
                 </div>
