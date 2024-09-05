@@ -12,7 +12,7 @@
             @yield('breadcrumb')
         </div>
         <!--end breadcrumb-->
-        </hr>
+        <hr/>
         <div class="row">
             <div class="col-12">
                 <div class="card">

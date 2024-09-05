@@ -17,7 +17,7 @@
 @endsection
 
 @section('header-button')
-    <a href="{{ route('users.create') }}" class="btn btn-primary mb-3 mb-lg-0"><i class='bx bxs-plus-square'></i>{{ __('New') }}</a>
+    <a href="{{ route('users.create') }}" class="btn btn-primary mb-3 mb-lg-0"><i class='bx bxs-save'></i>{{ __('New') }}</a>
 @endsection
 
 @section('thead')
