@@ -113,20 +113,44 @@ $(function() {
     function theme8() {
       $('html').attr('class', 'color-sidebar sidebarcolor8');
     }
+
+    // function confirmDelete() {
+    //     Swal.fire({
+    //         title: 'Are you sure?',
+    //         text: "You won't be able to revert this!",
+    //         icon: 'warning',
+    //         showCancelButton: true,
+    //         confirmButtonColor: '#3085d6',
+    //         cancelButtonColor: '#d33',
+    //         confirmButtonText: 'Yes, delete it!'
+    //     }).then((result) => {
+    //         if (result.isConfirmed) {
+    //             // Submit the form
+    //             $('#deleteForm').submit();
+    //         }
+    //     })
+    // }
 });
 
 
 $(document).ready(function() {
-    $('.datatables').DataTable({
-        columnDefs: [
-            {width: '40px', targets: 0 },
-            { orderable: false, targets: 0 },
-            { className: "text-center", targets: 0 }
-        ],
-        search: {
-            smart: false
-        }
-    });
+    if ($('.datatables').length) {
+        $('.datatables').DataTable({
+            columnDefs: [
+                {width: '40px', targets: 0 },
+                { orderable: false, targets: 0 },
+                { className: "text-center", targets: 0 }
+            ],
+            search: {
+                smart: false
+            }
+        });
+
+        $('.datatables tbody tr').children('td:not(:first-child)').on('click', function() {
+            var actionUrl = $(this).closest('tr').attr('data-action');
+            document.location.replace(actionUrl);
+        });
+    }
 
     $("#show_hide_password a").on('click', function (event) {
         event.preventDefault();

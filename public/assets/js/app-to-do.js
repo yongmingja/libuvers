@@ -1,4 +1,4 @@
-// to do list 
+// to do list
 		 var todos = [{
 			text: "take out the trash",
 			done: false,
@@ -22,15 +22,15 @@
 			var newTodoHTML = `
 			<div class="pb-3 todo-item" todo-id="${todo.id}">
 				<div class="input-group">
-					
+
 						<div class="input-group-text">
 							<input type="checkbox" onchange="TodoChecked(${todo.id})" aria-label="Checkbox for following text input" ${todo.done&& "checked"}>
 						</div>
-					
+
 					<input type="text" readonly class="form-control ${todo.done&&" todo-done "} " aria-label="Text input with checkbox" value="${todo.text}">
-					
+
 						<button todo-id="${todo.id}" class="btn btn-outline-secondary bg-danger text-white" type="button" onclick="DeleteTodo(this);" id="button-addon2 ">X</button>
-					
+
 				</div>
 			</div>
 			  `;

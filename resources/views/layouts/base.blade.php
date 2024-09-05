@@ -22,6 +22,7 @@
         <!--end wrapper-->
         <div class="wrapper">
             @yield('wrapper')
+            @include('sweetalert::alert')
         </div>
         <!--plugins-->
         <script src="{{ url('assets/js/jquery.min.js') }}"></script>

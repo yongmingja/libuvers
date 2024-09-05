@@ -1900,6 +1900,14 @@ input::placeholder {
 }
 
 /* Start Datatables */
+    .table:not(.not-selectable) tbody tr {
+        cursor: pointer;
+    }
+
+    .table tbody tr:hover {
+        background-color: rgba(0, 0, 0, 0.1) !important;
+    }
+
     .dt-orderable-none {
         padding: 0 !important;
     }

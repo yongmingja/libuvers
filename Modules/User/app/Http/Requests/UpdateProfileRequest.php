@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Requests;
+namespace Modules\User\Http\Requests;
 
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreUserRequest extends FormRequest
+class UpdateProfileRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,7 +26,6 @@ class StoreUserRequest extends FormRequest
             'name' => ['string', 'required'],
             'username' => ['string', 'required'],
             'email' => ['email', 'required'],
-            'password' => ['string', 'required', 'min:8'],
         ];
     }
 

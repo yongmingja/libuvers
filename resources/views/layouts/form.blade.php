@@ -8,11 +8,7 @@
                 @yield('breadcrumb')
             </div>
             <!--end breadcrumb-->
-            <div class="card">
-                <div class="card-body">
                     @yield('content')
-                </div>
-            </div>
         </div>
     </div>
 @endsection

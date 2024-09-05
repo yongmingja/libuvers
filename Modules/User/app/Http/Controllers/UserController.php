@@ -3,13 +3,14 @@
 namespace Modules\User\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreUserRequest;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Modules\User\Http\Requests\StoreUserRequest;
+use Modules\User\Http\Requests\UpdateUserRequest;
 
 class UserController extends Controller
 {
@@ -23,7 +24,7 @@ class UserController extends Controller
             'users' => User::all()->except('1')
         ];
 
-        return view('user::user.index', $data);
+        return view('user::users.index', $data);
     }
 
     /**
@@ -31,7 +32,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('user::user.create');
+        return view('user::users.create');
     }
 
     /**
@@ -51,10 +52,10 @@ class UserController extends Controller
                 ]);
             });
             toast(__('User added successfully.'), 'success');
-            return redirect()->route('user.index');
+            return redirect()->route('users.index');
         } catch (\Exception $e) {
-            Log::error('Product creation failed: ' . $e->getMessage());
-            toast(__('Failed to add User. Please try again.'), 'warning');
+            Log::error('User creation failed: ' . $e->getMessage());
+            toast(__('Failed to add user. Please try again.'), 'warning');
             return back()->withInput();
         }
     }
@@ -62,32 +63,67 @@ class UserController extends Controller
     /**
      * Show the specified resource.
      */
-    public function show($id)
+    public function show(User $user)
     {
-        return view('user::user.show');
+        return view('user::users.show');
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        return view('user::user.edit');
+        $data = [
+            'user' => $user
+        ];
+
+        $title = 'Delete User!';
+        $text = "Are you sure you want to delete?";
+        confirmDelete($title, $text);
+
+        return view('user::users.edit', $data);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id): RedirectResponse
+    public function update(UpdateUserRequest $request, User $user): RedirectResponse
     {
-        //
+        $request->validated();
+
+        try {
+            DB::transaction(function () use ($request, $user) {
+                $user->update([
+                    'name' => $request->input('name'),
+                    'username' => $request->input('username'),
+                    'email' => $request->input('email'),
+                    'password' => $request->input('password') ?? $user->password,
+                ]);
+            });
+            toast(__('User updated successfully.'), 'success');
+            return redirect()->route('users.index');
+        } catch (\Exception $e) {
+            Log::error('User update failed: ' . $e->getMessage());
+            toast(__('Failed to update user. Please try again.'), 'warning');
+            return back()->withInput();
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        try {
+            DB::transaction(function () use ($user) {
+                $user->delete();
+            });
+            toast(__('User deleted successfully.'), 'success');
+            return redirect()->route('users.index');
+        } catch (\Exception $e) {
+            Log::error('User delete failed: ' . $e->getMessage());
+            toast(__('Failed to delete User. Please try again.'), 'warning');
+            return back()->withInput();
+        }
     }
 }

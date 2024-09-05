@@ -17,7 +17,7 @@
 @endsection
 
 @section('header-button')
-    <a href="{{ route('user.create') }}" class="btn btn-primary mb-3 mb-lg-0"><i class='bx bxs-plus-square'></i>{{ __('New') }}</a>
+    <a href="{{ route('users.create') }}" class="btn btn-primary mb-3 mb-lg-0"><i class='bx bxs-plus-square'></i>{{ __('New') }}</a>
 @endsection
 
 @section('thead')
@@ -31,7 +31,7 @@
 
 @section('tbody')
     @foreach ($users as $user)
-        <tr data-action="{{ route('user.edit', $user->id) }}">
+        <tr data-action="{{ route('users.edit', $user->id) }}">
             <td class="text-center"><input class="form-check-input" type="checkbox" value=""></td>
             <td>{{ $user->name }}</td>
             <td>{{ $user->username }}</td>

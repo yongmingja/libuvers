@@ -49,14 +49,16 @@
                 <div class="menu-title">{{ __('Settings') }}</div>
             </a>
             <ul>
-                <li>
-                    <a class="has-arrow" href="javascript:;"><i class="bx bx-right-arrow-alt"></i>{{ __('Users & Companies') }}</a>
-                    <ul>
-                        <li>
-                            <a href="{{ route('user.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('Users') }}</a>
-                        </li>
-                    </ul>
-                </li>
+                @if (Module::isEnabled('User'))
+                    <li>
+                        <a class="has-arrow" href="javascript:;"><i class="bx bx-right-arrow-alt"></i>{{ __('Users & Companies') }}</a>
+                        <ul>
+                            <li>
+                                <a href="{{ route('users.index') }}"><i class="bx bx-right-arrow-alt"></i>{{ __('Users') }}</a>
+                            </li>
+                        </ul>
+                    </li>
+                @endif
             </ul>
         </li>
     </ul>

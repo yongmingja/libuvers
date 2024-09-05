@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
+use Modules\User\Http\Controllers\ProfileController;
 use Modules\User\Http\Controllers\UserController;
 
 /*
@@ -15,5 +17,12 @@ use Modules\User\Http\Controllers\UserController;
 */
 
 Route::middleware(['auth'])->group(function () {
-    Route::resource('user', UserController::class)->names('user')->except('show');
+    Route::resource('users', UserController::class)->names('users')->except('show');
+
+    Route::prefix('user')->controller(ProfileController::class)->group(function () {
+        Route::get('profile', 'edit')->name('profile.edit');
+        Route::patch('update', 'update')->name('profile.update');
+        Route::patch('password', 'updatePassword')->name('profile.update.password');
+    });
+
 });
