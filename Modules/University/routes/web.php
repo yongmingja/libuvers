@@ -13,7 +13,3 @@ use Modules\University\Http\Controllers\UniversityController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::group([], function () {
-    Route::resource('university', UniversityController::class)->names('university');
-});

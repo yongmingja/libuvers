@@ -13,7 +13,3 @@ use Modules\Library\Http\Controllers\LibraryController;
  * is assigned the "api" middleware group. Enjoy building your API!
  *
 */
-
-Route::middleware(['auth:sanctum'])->prefix('v1')->group(function () {
-    Route::apiResource('library', LibraryController::class)->names('library');
-});

@@ -42,6 +42,23 @@
                 </li>
             </ul>
         </li> --}}
+
+        @if (Module::isEnabled('Library'))
+            <li>
+                <a href="javascript:;" class="has-arrow">
+                    <div class="parent-icon">
+                        <i class="bx bxs-book"></i>
+                    </div>
+                    <div class="menu-title">{{ __('Books') }}</div>
+                </a>
+                <ul>
+                    <li>
+                        <a href="{{ route('books.index') }}">
+                        <i class="bx bx-right-arrow-alt"></i>{{ __('Books') }}</a>
+                    </li>
+                </ul>
+            </li>
+        @endif
         <li>
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class='bx bx-cog'></i>

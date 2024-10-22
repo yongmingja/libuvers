@@ -13,7 +13,3 @@ use Modules\Base\Http\Controllers\BaseController;
  * is assigned the "api" middleware group. Enjoy building your API!
  *
 */
-
-Route::middleware(['auth:sanctum'])->prefix('v1')->group(function () {
-    Route::apiResource('base', BaseController::class)->names('base');
-});

@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Modules\Library\Http\Controllers\LibraryBookBookController;
 use Modules\Library\Http\Controllers\LibraryController;
+use Modules\Library\Models\LibraryBookBook;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +16,6 @@ use Modules\Library\Http\Controllers\LibraryController;
 |
 */
 
-Route::group([], function () {
-    Route::resource('library', LibraryController::class)->names('library');
+Route::middleware(['auth'])->group(function () {
+    Route::resource('books', LibraryBookBookController::class)->names('books')->except('show');
 });

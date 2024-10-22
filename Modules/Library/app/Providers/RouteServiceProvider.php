@@ -4,6 +4,7 @@ namespace Modules\Library\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Modules\Library\Models\LibraryBookBook;
 
 class RouteServiceProvider extends ServiceProvider
 {

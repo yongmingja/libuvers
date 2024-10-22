@@ -152,6 +152,13 @@ $(document).ready(function() {
         });
     }
 
+    $('.single-select').each(function (index, element) {
+        $(this).select2({
+            theme: 'bootstrap-5',
+            width: '100%'
+        });
+    });
+
     $("#show_hide_password a").on('click', function (event) {
         event.preventDefault();
         if ($('#show_hide_password input').attr("type") == "text") {

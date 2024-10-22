@@ -12,6 +12,8 @@
 	<link href="{{ url('assets/plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />
 	<link href="{{ url('assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet" />
 	<link href="{{ url('assets/plugins/metismenu/css/metisMenu.min.css') }}" rel="stylesheet" />
+	<link href="{{ url('assets/plugins/select2/css/select2.min.css') }}" rel="stylesheet" />
+	<link href="{{ url('assets/plugins/select2/css/select2-bootstrap.min.css') }}" rel="stylesheet" />
 	<!-- loader-->
 	<link href="{{ url('assets/css/pace.min.css') }}" rel="stylesheet" />
 	<script src="{{ url('assets/js/pace.min.js') }}"></script>
@@ -57,6 +59,7 @@
 	<script src="{{ url('assets/js/jquery.min.js') }}"></script>
 	<script src="{{ url('assets/plugins/simplebar/js/simplebar.min.js') }}"></script>
 	<script src="{{ url('assets/plugins/metismenu/js/metisMenu.min.js') }}"></script>
+	<script src="{{ url('assets/plugins/select2/js/select2.min.js') }}"></script>
 	<script src="{{ url('assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js') }}"></script>
 	<!--app JS-->
 	@yield("script")
