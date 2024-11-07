@@ -2,13 +2,14 @@
 
 namespace Modules\Library\Models;
 
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Modules\Library\Database\Factories\LibraryBookCategoryFactory;
 
 class LibraryBookCategory extends Model
 {
-    use HasFactory;
+    use HasUuids, HasFactory;
 
     /**
      * The attributes that are mass assignable.
@@ -16,6 +17,11 @@ class LibraryBookCategory extends Model
     protected $fillable = [
         'name'
     ];
+
+    public function getKeyName()
+    {
+        return 'uuid';
+    }
 
     protected static function newFactory(): LibraryBookCategoryFactory
     {

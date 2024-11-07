@@ -12,7 +12,3 @@ Auth::routes([
 ]);
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-
-Route::get('/logger', function () {
-    return view('logger.logger');
-});

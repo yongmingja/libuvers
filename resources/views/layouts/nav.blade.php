@@ -53,6 +53,10 @@
                 </a>
                 <ul>
                     <li>
+                        <a href="{{ route('categories.index') }}">
+                        <i class="bx bx-right-arrow-alt"></i>{{ __('Categories') }}</a>
+                    </li>
+                    <li>
                         <a href="{{ route('books.index') }}">
                         <i class="bx bx-right-arrow-alt"></i>{{ __('Books') }}</a>
                     </li>
