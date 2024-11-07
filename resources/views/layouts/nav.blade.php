@@ -1,7 +1,7 @@
 <div class="sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
         <div class="mx-auto">
-            <img src="{{ url('assets/images/logo-icon.png') }}" class="logo-icon" alt="logo icon">
+            <img src="{{ url('assets/images/logo.svg') }}" class="logo-icon" alt="logo icon">
         </div>
         <div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
         </div>
