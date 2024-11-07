@@ -35,8 +35,8 @@ class StoreBookRequest extends FormRequest
             'category_id' => 'required|exists:library_book_categories,id',
             'language_id' => 'required|exists:base_languages,id',
             'synopsis' => 'required|string|max:1000',
-            'cover_path' => 'required|file|image|mimes:jpeg,jpg|max:2048', // 2MB max size
-            'book_path' => 'required|file|mimes:pdf|max:102400', // 100MB max size
+            'cover_path' => 'required|file|image|mimes:jpeg,jpg|max:500', // 500KB max size
+            'book_path' => 'required|file|mimes:pdf|max:25600', // 25MB max size
         ];
     }
 
