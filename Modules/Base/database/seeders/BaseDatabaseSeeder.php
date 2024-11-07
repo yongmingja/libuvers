@@ -12,5 +12,6 @@ class BaseDatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([BaseLanguageSeeder::class]);
+        $this->call([BaseSequenceSeeder::class]);
     }
 }

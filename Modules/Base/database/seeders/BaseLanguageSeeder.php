@@ -12,7 +12,7 @@ class BaseLanguageSeeder extends Seeder
      */
     public function run(): void
     {
-        BaseLanguage::create([ "name" => "Indonesia", "code" => "ID" ]);
+        BaseLanguage::create([ "name" => "Bahasa Indonesia", "code" => "ID" ]);
         BaseLanguage::create([ "name" => "English", "code" => "EN" ]);
     }
 }

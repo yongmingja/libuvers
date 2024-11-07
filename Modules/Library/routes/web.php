@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Modules\Library\Http\Controllers\LibraryBookBookController;
+use Modules\Library\Http\Controllers\LibraryBookCategoryController;
 use Modules\Library\Http\Controllers\LibraryController;
 use Modules\Library\Models\LibraryBookBook;
 
@@ -18,4 +19,5 @@ use Modules\Library\Models\LibraryBookBook;
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('books', LibraryBookBookController::class)->names('books')->except('show');
+    Route::resource('categories', LibraryBookCategoryController::class)->names('categories')->except('show');
 });

@@ -41,7 +41,7 @@ class LibraryBookBook extends Model
         //return LibraryBookBookFactory::new();
     }
 
-    public function getRouteKeyName()
+    public function getKeyName()
     {
         return 'uuid';
     }

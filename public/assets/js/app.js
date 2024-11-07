@@ -137,9 +137,10 @@ $(document).ready(function() {
     if ($('.datatables').length) {
         $('.datatables').DataTable({
             columnDefs: [
-                {width: '40px', targets: 0 },
+                { width: '40px', targets: 0 },
                 { orderable: false, targets: 0 },
-                { className: "text-center", targets: 0 }
+                { className: 'text-center', targets: 0 },
+                { className: 'text-start', targets: '_all' }
             ],
             search: {
                 smart: false
