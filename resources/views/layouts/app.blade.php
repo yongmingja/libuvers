@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--favicon-->
-	<link href="{{ url('assets/images/favicon-32x32.png') }}" rel="icon" type="image/png" />
+	<link href="{{ url('favicon-32x32.png') }}" rel="icon" type="image/png" />
 	<!--plugins-->
 	@yield("style")
 	<link href="{{ url('assets/plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />
